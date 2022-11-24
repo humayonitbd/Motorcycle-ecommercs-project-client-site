@@ -4,7 +4,11 @@ import bike2 from '../../../assets/baneer-img/bike2.jpg'
 
 const HomeModern = () => {
     return (
-        <div>
+        <div className='my-20 m-10/12 mx-auto'>
+            <div className='my-10'>
+                <h2 className='text-center text-5xl font-bold'>Ours MODERN MOTORCYCLES</h2>
+                <p className='text-center md:w-1/2 my-5 mx-auto px-5'>Our modern motorcycles are made in a unique design and its motorcycles are very good in terms of quality.Any type of motorcycle is available from us, so you can check and buy our motorcycle from them</p>
+            </div>
             <div className="hero my-12">
             <div className="hero-content flex-col lg:flex-row">
                 <img src={bike1} className="w-1/2 rounded-lg shadow-2xl" alt=''/>

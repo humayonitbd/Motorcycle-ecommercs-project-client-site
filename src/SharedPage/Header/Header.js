@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import logo from '../../../src/assets/baneer-img/logo.png';
 
 const Header = () => {
     const {user, logOut} = useContext(AuthContext);
@@ -21,7 +22,7 @@ const Header = () => {
     
     </>
     return (
-        <div className='bg-base-300 py-2'>
+        <div className=' py-2'>
         <div className="navbar w-10/12 mx-auto">
             <div className="navbar-start lg:hidden">
                 <div className="dropdown ">
@@ -39,8 +40,9 @@ const Header = () => {
                 </div>
             </div>
             <div className="navbar-start">
-                <Link className="font-bold text-xl">Bikesell</Link>
-                <div className="navbar-center hidden lg:flex">
+                <img src={logo} className="w-20 h-16 " alt="" />
+                <Link className="font-bold text-xl">Motorcycle</Link>
+                <div className="navbar-center ml-5 hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                 {menuber}
                 </ul>

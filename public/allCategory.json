@@ -1,0 +1,122 @@
+[
+    {
+        "img": "https://imgcdn.zigwheels.ph/large/gallery/exterior/86/2955/yamaha-yzf-r15m-slant-rear-view-full-image-774811.jpg",
+        "name": "Yamaha R15M",
+        "category":"yamaha",
+        "location": "Dhaka-Mirpur",
+        "resale_price": 270000,
+        "origin_price": 570000,
+        "use": "1 year"
+
+    },
+    {
+        "img": "https://www.bikebd.com/den/storage/app/files/shares/images/productimages/slider/r15-v4-racing-blue628a006fbb878.webp",
+        "name": "Yamaha R15 V4",
+        "category":"yamaha",
+        "location": "Dhaka-Mirpur",
+        "resale_price": 370000,
+        "origin_price": 555000,
+        "use": "6 months"
+
+    },
+    {
+        "img": "https://bengalbiker.com/wp-content/uploads/elementor/thumbs/Yamaha-R15-V4-price-in-bangladesh-1-pnghs9sel77uxpbdmxcglsrz01rbz9yk6uhtyry3d4.jpg",
+        "name": "Yamaha R15 V4",
+        "category":"yamaha",
+        "location": "Dhaka-Mirpur",
+        "resale_price": 290000,
+        "origin_price": 530000,
+        "use": "5 months"
+
+    },
+    {
+        "img": "https://www.bikevaly.com/assets/img/honda-pcx-150-price-500x500.webp",
+        "name": "Honda PCX 150",
+        "category":"honda",
+        "location": "Dhaka-savar",
+        "resale_price": 200000,
+        "origin_price": 510000,
+        "use": "5 months"
+
+    },
+    {
+        "img": "https://www.bikebd.com/den/storage/app/files/shares/images/productimages/slider/honda-adv-150-red60d82f7f11ec0.webp",
+        "name": "Honda ADV 150",
+        "category":"honda",
+        "location": "Dhaka-savar",
+        "resale_price": 190000,
+        "origin_price": 370000,
+        "use": "7 months"
+
+    },
+    {
+        "img": "https://www.bikebd.com/den/storage/app/files/shares/images/productimages/slider/1613628415_12_186122.jpeg",
+        "name": "Honda CRF 150L",
+        "category":"honda",
+        "location": "Dhaka-savar",
+        "resale_price": 250000,
+        "origin_price": 495000,
+        "use": "4 months"
+
+    },
+    {
+        "img": "https://bengalbiker.com/wp-content/uploads/2021/03/suzuki-gsx-150-fi-abs.jpg",
+        "category":"suzuki",
+        "name": "Suzuki GSX-R150 ABS",
+        "location": "Dhaka-savar",
+        "resale_price": 235000,
+        "origin_price": 429000,
+        "use": "8 months"
+
+    },
+    {
+        "img": "https://www.bikebd.com/den/storage/app/files/shares/images/productimages/slider/suzuki-gsx-s150-blue60d70b0516555.webp",
+        "category":"suzuki",
+        "name": "Suzuki GSX-S150",
+        "location": "Dhaka-savar",
+        "resale_price": 195000,
+        "origin_price": 329000,
+        "use": "1 years"
+
+    },
+    {
+        "img": "https://www.motorcycle.com.bd/images/bikes/Suzuki-Bandit-150-Black.jpg",
+        "category":"suzuki",
+        "name": "Suzuki Bandit 150",
+        "location": "Dhaka-savar",
+        "resale_price": 250000,
+        "origin_price": 349000,
+        "use": "5 months"
+
+    },
+    {
+        "img": "https://bengalbiker.com/wp-content/uploads/2022/06/Thriller-160R-Refresh-red.jpg",
+        "category":"hero",
+        "name": "Hero Thriller 160R Refresh",
+        "location": "Rajshahi",
+        "resale_price": 152000,
+        "origin_price": 222000,
+        "use": "5 months"
+
+    },
+    {
+        "img": "https://www.bdstall.com/asset/product-image/giant_90484.jpg",
+        "category":"hero",
+        "name": "Hero Maestro Edge",
+        "location": "Khulna",
+        "resale_price": 100000,
+        "origin_price": 151070,
+        "use": "2 months"
+
+    },
+    {
+        "img": "https://www.motorcyclevalley.com/photo/hero-thriller-160r-fi-abs-dd-1655355739.jpg",
+        "category":"hero",
+        "name": "Hero Thriller 160R",
+        "location": "Chapai",
+        "resale_price": 170000,
+        "origin_price": 203000,
+        "use": "3 months"
+
+    }
+]
