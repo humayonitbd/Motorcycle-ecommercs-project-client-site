@@ -1,11 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
+import SaveUserInfo from "../../../components/SaveUserInfo/SaveUserInfo";
+import useJwtTokenjs from "../../../components/useJwtToken/useJwtTokenjs";
 import { AuthContext } from "../../../Context/AuthProvider";
 
 const Register = () => {
     const {createUser, userUpdateHandler} = useContext(AuthContext)
     const navigete = useNavigate();
+    // const [createEmail, setCreateEmail] = useState('');
+    // const [token] = useJwtTokenjs(createEmail)
+    // if(token){
+    //   navigete('/');
+    // }
     const handlerRegister=(e)=>{
         e.preventDefault();
         const form = e.target;
@@ -21,9 +28,19 @@ const Register = () => {
         .then(result =>{
             const user = result.user;
             console.log(user)
+            const userData ={
+              name: name,
+              email: email
+            }
+            SaveUserInfo(userData)
+            .then(res =>res.json())
+            .then(data =>{
+              console.log(data)
+              // setCreateEmail(userData.email)
+            })
             userUpdateHandler(name)
             toast.success('Created account successfull!')
-            navigete('/')
+            navigete('/');
 
         })
         .catch(error =>console.log(error))

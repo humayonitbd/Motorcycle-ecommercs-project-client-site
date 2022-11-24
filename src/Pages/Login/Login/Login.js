@@ -1,14 +1,20 @@
 import { Result } from 'postcss';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useJwtTokenjs from '../../../components/useJwtToken/useJwtTokenjs';
 import { AuthContext } from '../../../Context/AuthProvider';
 
 const Login = () => {
     const {login} = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
-    const from = location.state?.from?.pathname || '/'
+    const from = location.state?.from?.pathname || '/';
+    // const [loginEmail, setLoginEmail] = useState('');
+    // const [token] = useJwtTokenjs(loginEmail);
+    // if(token){
+    //   navigate(from, {replace: true});
+    // };
     const handlerLogin=(e)=>{
         e.preventDefault();
         const form = e.target;
@@ -18,8 +24,10 @@ const Login = () => {
         .then(result =>{
             const user = result.user;
             console.log(user)
+            // setLoginEmail(user.email)
             toast.success('Login successfull!!')
-            navigate(from, {replace: true})
+            form.reset();
+            navigate(from, {replace: true});
         })
         .catch(err =>{
             toast.error(err.message)

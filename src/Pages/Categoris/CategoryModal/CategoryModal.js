@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../../Context/AuthProvider';
 
-const CategoryModal = ({orderBike}) => {
+const CategoryModal = ({orderBike, setOrderBike}) => {
     const {user} = useContext(AuthContext);
-    const {  name, resale_price, _id} = orderBike;
+    const {  name, img, resale_price, _id} = orderBike;
     const handlerBileBooked=(e)=>{
         e.preventDefault();
         const form = e.target;
@@ -20,16 +21,24 @@ const CategoryModal = ({orderBike}) => {
             productName,
             productPrice,
             mobileNumber,
-            meetLocation
+            meetLocation,
+            productImg: img
         }
         console.log(bookedProduct)
 
         fetch('http://localhost:5000/bookedProduct',{
-            
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(bookedProduct)
         })
         .then(res =>res.json())
         .then(data =>{
             console.log(data);
+            toast.success('Boooked successfull!!')
+            form.reset();
+            setOrderBike(null)
         })
      
 
@@ -49,8 +58,8 @@ const CategoryModal = ({orderBike}) => {
                 <input type="email" name='email' disabled defaultValue={user?.email}  className="input input-bordered w-full" />
                 <input type="text" name='productName' disabled defaultValue={name} className="input input-bordered w-full" />
                 <input type="text" name='productPrice' disabled defaultValue={resale_price} className="input input-bordered w-full" />
-                <input type="text" name='userNumber' placeholder='type your phone number' className="input input-bordered w-full" />
-                <input type="text" name='UserMeetLocation' placeholder='meeting location'  className="input input-bordered w-full" />
+                <input type="text" required name='userNumber' placeholder='type your phone number' className="input input-bordered w-full" />
+                <input type="text" required name='UserMeetLocation' placeholder='meeting location'  className="input input-bordered w-full" />
                 <input type="submit" className='btn bg-orange-500' value='confrom booked' />
                 </form>
             </div>

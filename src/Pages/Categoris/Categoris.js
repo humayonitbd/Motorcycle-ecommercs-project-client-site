@@ -27,7 +27,7 @@ console.log(allCategorys)
                     </div>
                 }
             </div>
-            {orderBike && <CategoryModal orderBike={orderBike}></CategoryModal>}
+            {orderBike && <CategoryModal orderBike={orderBike} setOrderBike={setOrderBike}></CategoryModal>}
             
         </div>
     );
