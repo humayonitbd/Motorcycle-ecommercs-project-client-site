@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthProvider";
 
@@ -15,6 +16,14 @@ const Register = () => {
             alert('Your password must be 6 charecter!!')
             return;
         }
+        createUser(email, password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user)
+            toast.success('Created account successfull!')
+
+        })
+        .catch(error =>console.log(error))
         console.log(name, email, password, role)
 
     }
