@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthProvider";
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext)
+    const {createUser, userUpdateHandler} = useContext(AuthContext)
     const navigete = useNavigate();
     const handlerRegister=(e)=>{
         e.preventDefault();
@@ -21,6 +21,7 @@ const Register = () => {
         .then(result =>{
             const user = result.user;
             console.log(user)
+            userUpdateHandler(name)
             toast.success('Created account successfull!')
             navigete('/')
 

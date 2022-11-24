@@ -41,7 +41,7 @@ const Header = () => {
             </div>
             <div className="navbar-start">
                 <img src={logo} className="w-20 h-16 " alt="" />
-                <Link className="font-bold text-xl">Motorcycle</Link>
+                <Link className="font-bold text-xl text-orange-500">Motorcycle</Link>
                 <div className="navbar-center ml-5 hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                 {menuber}
@@ -51,8 +51,8 @@ const Header = () => {
             <div className="navbar-end">
           <div className='hidden lg:block'>
           {user?.email ? <><Link to='/dashboard'>Dashboard</Link>
-            <button className='btn ml-3'> <Link onClick={logOutHandler} >Log-out</Link></button></> : <><button className='btn mr-2'> <Link to='/login'>Login</Link></button>
-           <button className='btn mr-2'> <Link to='/register'>Register</Link></button></>}
+            <button className='btn ml-3 bg-orange-500'> <Link onClick={logOutHandler} >Log-out</Link></button></> : <><button className='btn mr-2 bg-orange-500'> <Link to='/login'>Login</Link></button>
+           <button className='btn mr-2 bg-orange-500'> <Link to='/register'>Register</Link></button></>}
             
         
           

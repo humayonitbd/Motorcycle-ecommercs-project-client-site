@@ -11,7 +11,7 @@ const HomeBikeCategory = () => {
     })
      console.log(categorys)
     return (
-        <div className='my-20'>
+        <div className='my-20 md:mb-40'>
             <div className='text-center my-5'>
                 <h2 className='text-5xl font-bold'> Bike Brand Category</h2>
             </div>
