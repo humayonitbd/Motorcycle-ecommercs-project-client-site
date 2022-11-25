@@ -17,6 +17,7 @@ const Header = () => {
     }
     const menuber=<>
     <li><Link to='/'>Home</Link></li>
+    <li><Link to='/blog'>Blog</Link></li>
     
     
     

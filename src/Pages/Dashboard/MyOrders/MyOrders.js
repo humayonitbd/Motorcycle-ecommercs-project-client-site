@@ -11,7 +11,11 @@ const MyOrders = () => {
 
      const {data:mybookedProducts = [], refetch} = useQuery({
         queryKey: ['mybookedProducts', user?.email],
-        queryFn:()=>fetch(`http://localhost:5000/mybookedProducts?email=${user?.email}`)
+        queryFn:()=>fetch(`http://localhost:5000/mybookedProducts?email=${user?.email}`,{
+          headers:{
+            authorization: `bearer ${localStorage.getItem('accessToken')}`
+          }
+        })
         .then(res=>res.json())
      })
 
@@ -54,7 +58,7 @@ const MyOrders = () => {
       {
         mybookedProducts?.length === 0 ? <SmallLoading></SmallLoading> : <>
         {
-            mybookedProducts?.map((mybookedProduct, idx)=><tr>
+         mybookedProducts.length && mybookedProducts?.map((mybookedProduct, idx)=><tr>
             <th>
               <label>
                 {idx}

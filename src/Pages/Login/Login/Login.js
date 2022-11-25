@@ -2,19 +2,20 @@ import { Result } from 'postcss';
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import useJwtTokenjs from '../../../components/useJwtToken/useJwtTokenjs';
+import SaveUserInfo from '../../../components/SaveUserInfo/SaveUserInfo';
 import { AuthContext } from '../../../Context/AuthProvider';
+import useJwtToken from '../../../hooks/useJwtToken/useJwtToken';
 
 const Login = () => {
-    const {login} = useContext(AuthContext);
+    const {login, googleLogin} = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || '/';
-    // const [loginEmail, setLoginEmail] = useState('');
-    // const [token] = useJwtTokenjs(loginEmail);
-    // if(token){
-    //   navigate(from, {replace: true});
-    // };
+    const [loginEmail, setLoginEmail] = useState('');
+    const [token] = useJwtToken(loginEmail);
+    if(token){
+      navigate(from, {replace: true});
+    };
     const handlerLogin=(e)=>{
         e.preventDefault();
         const form = e.target;
@@ -24,15 +25,35 @@ const Login = () => {
         .then(result =>{
             const user = result.user;
             console.log(user)
-            // setLoginEmail(user.email)
+            setLoginEmail(user.email)
             toast.success('Login successfull!!')
             form.reset();
-            navigate(from, {replace: true});
+            // navigate(from, {replace: true});
         })
         .catch(err =>{
             toast.error(err.message)
         })
         console.log(email, password)
+    }
+
+    const handlerLoginGoogle=()=>{
+      googleLogin()
+      .then(result=>{
+        const user = result.user;
+        const userData ={
+          name: user.displayName,
+          email: user.email,
+          role: 'user'
+        }
+        SaveUserInfo(userData)
+        .then(res =>res.json())
+        .then(data =>{
+          console.log(data)
+          // setCreateEmail(userData.email)
+        })
+        console.log(user)
+      })
+      .catch(error =>console.log(error))
     }
     return (
         <div>
@@ -80,8 +101,10 @@ const Login = () => {
                   className="btn btn-primary"
                 ></input>
               </div>
+              <div><button onClick={handlerLoginGoogle} className='btn w-full btn-primary'>Google-login</button></div>
             </div>
           </form>
+          <p className='text-orange-500'>Have a new user? <Link to='/register'><strong>register</strong></Link></p>
         </div>
       </div>
     </div>

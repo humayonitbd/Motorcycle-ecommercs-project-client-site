@@ -7,21 +7,21 @@ const Footer = () => {
             <footer className="footer p-10 bg-neutral text-neutral-content">
             <div>
                 <span className="footer-title">Services</span> 
-                <Link className="link link-hover">Branding</Link>
-                <Link className="link link-hover">Design</Link>
-                <Link className="link link-hover">Marketing</Link>
-                <Link className="link link-hover">Advertisement</Link>
+                <Link className="link link-hover">Suzuki Brand</Link>
+                <Link className="link link-hover">Hero Brand</Link>
+                <Link className="link link-hover">Honda Brand</Link>
+                <Link className="link link-hover">Yamaha Brand</Link>
             </div> 
             <div>
-                <span className="footer-title">Company</span> 
-                <Link className="link link-hover">About us</Link>
-                <Link className="link link-hover">Contact</Link>
-                <Link className="link link-hover">Jobs</Link>
+                <span className="footer-title">Link</span> 
+                <Link to='/' className="link link-hover">Home</Link>
+                <Link to='/blog' className="link link-hover">Blog</Link>
+                <Link className="link link-hover"><a href="https://www.facebook.com/humayonitbd">Contact us</a></Link>
                 <Link className="link link-hover">Press kit</Link>
             </div> 
             <div>
-                <span className="footer-title">Legal</span> 
-                <Link className="link link-hover">Terms of use</Link>
+                <span className="footer-title">Our Category</span> 
+                <Link className="link link-hover">Suzuki</Link>
                 <Link className="link link-hover">Privacy policy</Link>
                 <Link className="link link-hover">Cookie policy</Link>
             </div>

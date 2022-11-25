@@ -2,17 +2,18 @@ import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import SaveUserInfo from "../../../components/SaveUserInfo/SaveUserInfo";
-import useJwtTokenjs from "../../../components/useJwtToken/useJwtTokenjs";
 import { AuthContext } from "../../../Context/AuthProvider";
+import useJwtToken from "../../../hooks/useJwtToken/useJwtToken";
 
 const Register = () => {
     const {createUser, userUpdateHandler} = useContext(AuthContext)
     const navigete = useNavigate();
-    // const [createEmail, setCreateEmail] = useState('');
-    // const [token] = useJwtTokenjs(createEmail)
-    // if(token){
-    //   navigete('/');
-    // }
+    const [createEmail, setCreateEmail] = useState('');
+    console.log(createEmail)
+    const [token] = useJwtToken(createEmail);
+    if(token){
+      navigete('/');
+    }
     const handlerRegister=(e)=>{
         e.preventDefault();
         const form = e.target;
@@ -27,26 +28,45 @@ const Register = () => {
         createUser(email, password)
         .then(result =>{
             const user = result.user;
+            userUpdateHandlerBtn(name)
             console.log(user)
             const userData ={
               name: name,
-              email: email
+              email: email,
+              role: role
             }
-            SaveUserInfo(userData)
+            fetch(`http://localhost:5000/users`,{
+              method: 'POST',
+              headers:{
+                  'content-type': 'application/json'
+              },
+              body:JSON.stringify(userData)
+            })
             .then(res =>res.json())
             .then(data =>{
               console.log(data)
-              // setCreateEmail(userData.email)
+              setCreateEmail(userData.email)
             })
-            userUpdateHandler(name)
+            
+           
             toast.success('Created account successfull!')
-            navigete('/');
+            // navigete('/');
 
         })
         .catch(error =>console.log(error))
-        console.log(name, email, password, role)
+        // console.log(name, email, password, role)
 
     }
+
+    const userUpdateHandlerBtn=(name)=>{
+      userUpdateHandler(name)
+      .then(()=>{
+          console.log('profile update')
+      })
+      .catch(err =>console.log(err))
+
+  }
+
   return (
     <div>
       <div className="hero min-h-screen ">
@@ -113,6 +133,7 @@ const Register = () => {
               </div>
             </div>
           </form>
+          <p className='text-orange-500'>Have a account? <Link to='/login'><strong>login</strong></Link></p>
         </div>
       </div>
     </div>
