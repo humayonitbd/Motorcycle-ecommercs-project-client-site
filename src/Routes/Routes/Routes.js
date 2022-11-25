@@ -6,6 +6,7 @@ import Categoris from "../../Pages/Categoris/Categoris";
 import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
 import AllSellar from "../../Pages/Dashboard/AllSellar/AllSellar";
 import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
+import DashboardHome from "../../Pages/Dashboard/DashboardHome/DashboardHome";
 import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders";
 import MyProducts from "../../Pages/Dashboard/MyProducts/MyProducts";
 import HomeMain from "../../Pages/Home/HomeMain/HomeMain";
@@ -32,12 +33,12 @@ const router = createBrowserRouter([
         path:'/dashboard',
         errorElement: <ErrorPage></ErrorPage>,
          element:<DatabaseLayout></DatabaseLayout>, children:[
-            {path:'/dashboard', element:<PrivetRoute><MyOrders></MyOrders></PrivetRoute>},
-            {path:'/dashboard/myorders', element:<MyOrders></MyOrders>},
+            {path:'/dashboard', element:<PrivetRoute><DashboardHome></DashboardHome></PrivetRoute>},
+            {path:'/dashboard/myorders', element:<PrivetRoute><MyOrders></MyOrders></PrivetRoute>},
             {path:'/dashboard/addProduct', element:<AddProduct></AddProduct>},
             {path:'/dashboard/allSellar', element:<AdminRoutes><AllSellar></AllSellar></AdminRoutes>},
             {path:'/dashboard/allUsers', element:<AdminRoutes><AllUsers></AllUsers></AdminRoutes>},
-            {path:'/dashboard/myProduct', element:<MyProducts></MyProducts>}
+            {path:'/dashboard/myProduct', element:<PrivetRoute><MyProducts></MyProducts></PrivetRoute>}
         ]
     }
 ])

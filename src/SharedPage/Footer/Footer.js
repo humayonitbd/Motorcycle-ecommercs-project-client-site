@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaFacebook , FaTwitter, FaInstagram} from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <div>
-            <footer className="footer p-10 bg-neutral text-neutral-content">
+        <div className='bg-neutral'>
+            <footer className="footer w-10/12 mx-auto p-10 text-neutral-content">
             <div>
                 <span className="footer-title">Services</span> 
                 <Link className="link link-hover">Suzuki Brand</Link>
@@ -20,10 +21,14 @@ const Footer = () => {
                 <Link className="link link-hover">Press kit</Link>
             </div> 
             <div>
-                <span className="footer-title">Our Category</span> 
-                <Link className="link link-hover">Suzuki</Link>
-                <Link className="link link-hover">Privacy policy</Link>
-                <Link className="link link-hover">Cookie policy</Link>
+                <span className="footer-title">Contact Us</span> 
+                <Link className="link link-hover">Email: humayonforid44@gmail.com </Link>
+                <Link className="link link-hover">Phone: 088 17458964556</Link>
+                <div className='flex '>
+                    <span className='mr-5'><a href="https://www.facebook.com/humayonitbd"><FaFacebook className='text-2xl'/></a></span>
+                    <span  className='mr-5'><a href="https://twitter.com/humayonitbd"><FaTwitter className='text-2xl'/> </a></span>
+                    <span><a href="https://www.instagram.com/humayonitbd/"><FaInstagram className='text-2xl'/></a></span>
+                </div>
             </div>
             </footer>
         </div>

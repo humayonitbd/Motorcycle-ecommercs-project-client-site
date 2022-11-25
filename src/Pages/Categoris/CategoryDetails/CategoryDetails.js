@@ -11,7 +11,7 @@ const CategoryDetails = ({allCategory, setOrderBike}) => {
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <p>Location: {location}</p>
-                <p>Origin-price: <strong>${origin_price}</strong> </p>
+                <p>Origin-price: <strong>$<s> {origin_price}</s></strong> </p>
                 <p>Resale-price: <strong>${resale_price}</strong></p>
                 <p>Use: {use}</p>
                 <div className="card-actions justify-end">

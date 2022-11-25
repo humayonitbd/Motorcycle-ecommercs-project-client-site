@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import {  useNavigate } from "react-router-dom";
 import { AuthContext } from '../../../Context/AuthProvider';
 
 const AddProduct = () => {
     const {user} = useContext(AuthContext);
+    const navigete = useNavigate();
     const handlerAddProduct=(e)=>{
         e.preventDefault();
         const form = e.target;
@@ -12,18 +14,53 @@ const AddProduct = () => {
         const location = form.location.value;
         const mobileNumber = form.mobileNumber.value;
         const cellDate = form.cellDate.value;
+        const productCategory = form.productCategory.value;
+        const image = form.producturl.files[0];
         const productDetails = form.productDetails.value;
-        const addProducts = {
+        const formdata = new FormData();
+        formdata.append('image', image)
+
+        fetch(`https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_IMAGE_API}`,{
+            method: 'POST',
+            body: formdata
+
+        })
+        .then(res=>res.json())
+        .then(data =>{
+          const imageUrl = data.data.display_url;
+          const addProducts = {
             productName,
             productPrice,
             location,
             mobileNumber,
             cellDate,
             productDetails,
-            sellerEmail: user.email
+            sellerEmail: user.email,
+            imageUrl,
+            productCategory
 
         }
-        console.log(addProducts)
+
+        fetch(`http://localhost:5000/addProducts`,{
+          method:'POST',
+          headers:{
+            'content-type':'application/json'
+          },
+          body: JSON.stringify(addProducts)
+        })
+        .then(res =>res.json())
+        .then(data =>{
+          if(data.acknowledged){
+            toast.success('Added your product!!');
+            form.reset();
+            navigete('/dashboard/myProduct')
+          }
+         
+        })
+        
+        })
+        
+        
         
     }
     return (
@@ -52,8 +89,32 @@ const AddProduct = () => {
                   <span className="label-text">Product Price</span>
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   name="productPrice"
+                  placeholder="product price"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Product Category</span>
+                </label>
+                <input
+                  type="text"
+                  name="productCategory"
+                  placeholder="product Category"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Product img</span>
+                </label>
+                <input
+                  type="file"
+                  name="producturl"
                   placeholder="product price"
                   className="input input-bordered"
                   required
@@ -77,7 +138,7 @@ const AddProduct = () => {
                   <span className="label-text">Phone Number</span>
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   name="mobileNumber"
                   placeholder="mobile Number"
                   className="input input-bordered"
@@ -87,7 +148,7 @@ const AddProduct = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Cell Date</span>
+                  <span className="label-text">Year Date</span>
                 </label>
                 <input
                   type="text"
