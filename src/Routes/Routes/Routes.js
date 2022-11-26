@@ -9,6 +9,7 @@ import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
 import DashboardHome from "../../Pages/Dashboard/DashboardHome/DashboardHome";
 import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders";
 import MyProducts from "../../Pages/Dashboard/MyProducts/MyProducts";
+import PaymentPage from "../../Pages/Dashboard/PaymentPage/PaymentPage";
 import WishlistProduct from "../../Pages/Dashboard/WishlistProduct/WishlistProduct";
 import HomeMain from "../../Pages/Home/HomeMain/HomeMain";
 import Login from "../../Pages/Login/Login/Login";
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
          element:<DatabaseLayout></DatabaseLayout>, children:[
             {path:'/dashboard', element:<PrivetRoute><DashboardHome></DashboardHome></PrivetRoute>},
             {path:'/dashboard/myorders', element:<PrivetRoute><MyOrders></MyOrders></PrivetRoute>},
+            {path:'/dashboard/payment/:id', element:<PrivetRoute><PaymentPage></PaymentPage></PrivetRoute>},
             {path:'/dashboard/addProduct', element:<AddProduct></AddProduct>},
             {path:'/dashboard/allSellar', element:<AdminRoutes><AllSellar></AllSellar></AdminRoutes>},
             {path:'/dashboard/allUsers', element:<AdminRoutes><AllUsers></AllUsers></AdminRoutes>},

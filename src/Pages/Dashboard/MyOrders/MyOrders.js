@@ -84,7 +84,7 @@ const MyOrders = () => {
             <th>
               <button onClick={()=>handlerDeleteBtn(mybookedProduct._id)} className="btn bg-red-500 mr-2">delete</button>
               
-              <button className="btn bg-orange-500">pay</button>
+              <Link to={`/dashboard/payment/${mybookedProduct._id}`}><button className="btn bg-orange-500">pay</button></Link>
             </th>
           </tr>)
         }
