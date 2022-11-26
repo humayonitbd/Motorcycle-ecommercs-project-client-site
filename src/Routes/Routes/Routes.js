@@ -37,7 +37,9 @@ const router = createBrowserRouter([
          element:<DatabaseLayout></DatabaseLayout>, children:[
             {path:'/dashboard', element:<PrivetRoute><DashboardHome></DashboardHome></PrivetRoute>},
             {path:'/dashboard/myorders', element:<PrivetRoute><MyOrders></MyOrders></PrivetRoute>},
-            {path:'/dashboard/payment/:id', element:<PrivetRoute><PaymentPage></PaymentPage></PrivetRoute>},
+            {path:'/dashboard/payment/:id', 
+            loader:({params})=>fetch(`http://localhost:5000/mybookedProducts/${params.id}`),
+            element:<PrivetRoute><PaymentPage></PaymentPage></PrivetRoute>},
             {path:'/dashboard/addProduct', element:<AddProduct></AddProduct>},
             {path:'/dashboard/allSellar', element:<AdminRoutes><AllSellar></AllSellar></AdminRoutes>},
             {path:'/dashboard/allUsers', element:<AdminRoutes><AllUsers></AllUsers></AdminRoutes>},
