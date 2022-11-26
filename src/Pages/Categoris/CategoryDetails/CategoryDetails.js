@@ -47,7 +47,7 @@ const CategoryDetails = ({allCategory, setOrderBike}) => {
                 <p>Location: {location}</p>
                 <p>Origin-price: <strong>$<s> {origin_price}</s></strong> </p>
                 <p>Resale-price: <strong>${resale_price}</strong></p>
-                <p>Use: {use}</p>
+                {/* <p>Use: {use ? user : ''}</p> */}
                 <p>SellerName: {sellerName}</p>
                 <div className="card-actions mt-2 justify-between">
                     <button onClick={handlerWishlistBtn} className='btn btn-primary'>wishlist </button>

@@ -6,13 +6,16 @@ import {
     useElements,
   } from '@stripe/react-stripe-js';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const CheckoutForm  = ({paymentProduct}) => {
     const [cardError, setCardError] = useState('')
     const [clientSecret, setClientSecret] = useState("");
     const [transactionId, setTransactionId] = useState('')
     const [proccessing, setProccessing] = useState(false)
-    const {productPrice, productName, email, _id} = paymentProduct;
+    const navigete = useNavigate();
+    const {productPrice, productName, email, _id, productId} = paymentProduct;
+    console.log(productId, productName)
     const stripe = useStripe();
     const elements = useElements();
 
@@ -77,9 +80,11 @@ const CheckoutForm  = ({paymentProduct}) => {
                 productPrice,
                 transactionId: paymentIntent.id,
                 email,
-                orderId: _id
+                orderId: _id,
+                productId
 
             }
+        
             fetch('http://localhost:5000/payments',{
                 method: 'POST',
                 headers:{
@@ -94,7 +99,9 @@ const CheckoutForm  = ({paymentProduct}) => {
                 if(data.insertedId){
                     setTransactionId(paymentIntent.id)
                     toast.success('Congrats ! your payment successfull');
+                    navigete('/dashboard/myorders')
                 }
+                
             })
            
           }

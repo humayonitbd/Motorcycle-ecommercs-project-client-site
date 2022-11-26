@@ -18,7 +18,7 @@ const HomeAdvertice = () => {
             <div className='grid w-10/12 mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10'>
                 {
                     addverticeProducts.length === 0 ? <SmallLoading></SmallLoading> : <>
-                   { addverticeProducts.length &&  addverticeProducts?.map(addverticeProduct => <HomeAdverticeDetails key={addverticeProduct._id} addverticeProduct={addverticeProduct}></HomeAdverticeDetails>)}
+                   { addverticeProducts.length &&  addverticeProducts?.map(addverticeProduct => {return !addverticeProduct.paid && <HomeAdverticeDetails key={addverticeProduct._id} addverticeProduct={addverticeProduct}></HomeAdverticeDetails>})}
                     </> 
                 }
             </div>

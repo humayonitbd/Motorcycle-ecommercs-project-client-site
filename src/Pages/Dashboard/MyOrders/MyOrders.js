@@ -34,7 +34,7 @@ const MyOrders = () => {
         })
 
     }
-        
+      
      
     return (
         <div>
@@ -85,7 +85,7 @@ const MyOrders = () => {
               <button onClick={()=>handlerDeleteBtn(mybookedProduct._id)} className="btn bg-red-500 mr-2">delete</button>
               
               {
-                mybookedProduct.productPrice && mybookedProduct.paid ? <><button className='btn btn-primary'>Paid</button></> : <><Link to={`/dashboard/payment/${mybookedProduct._id}`}><button className="btn bg-orange-500">pay</button></Link></>
+                mybookedProduct.productPrice && mybookedProduct.paid ? <><button className='btn btn-primary'>Paid</button></> : <><Link to={`/dashboard/payment/${mybookedProduct._id}`}><button className="btn bg-orange-500" >pay</button></Link></>
               }
             </th>
           </tr>)

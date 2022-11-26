@@ -9,12 +9,13 @@ const AddProduct = () => {
     const handlerAddProduct=(e)=>{
         e.preventDefault();
         const form = e.target;
-        const productName = form.productName.value;
-        const productPrice = form.productPrice.value;
+        const name = form.productName.value;
+        const origin_price = form.originePrice.value;
+        const resale_price = form.relesePrice.value;
         const location = form.location.value;
         const mobileNumber = form.mobileNumber.value;
         const cellDate = form.cellDate.value;
-        const productCategory = form.productCategory.value;
+        const category = form.productCategory.value;
         const image = form.producturl.files[0];
         const productDetails = form.productDetails.value;
         const formdata = new FormData();
@@ -27,20 +28,24 @@ const AddProduct = () => {
         })
         .then(res=>res.json())
         .then(data =>{
-          const imageUrl = data.data.display_url;
+          const img = data.data.display_url;
           const addProducts = {
-            productName,
-            productPrice,
+            name,
+            origin_price,
+            resale_price,
             location,
             mobileNumber,
             cellDate,
             productDetails,
             sellerEmail: user.email,
-            imageUrl,
-            productCategory
+            sellerName: user.displayName,
+            img,
+            category,
+            status: 'Available'
 
         }
 
+        console.log(addProducts)
         fetch(`http://localhost:5000/addProducts`,{
           method:'POST',
           headers:{
@@ -86,11 +91,23 @@ const AddProduct = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Product Price</span>
+                  <span className="label-text">Origine Price</span>
                 </label>
                 <input
                   type="number"
-                  name="productPrice"
+                  name="originePrice"
+                  placeholder="product price"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Relese Price</span>
+                </label>
+                <input
+                  type="number"
+                  name="relesePrice"
                   placeholder="product price"
                   className="input input-bordered"
                   required

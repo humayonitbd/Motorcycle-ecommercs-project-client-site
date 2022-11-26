@@ -22,7 +22,7 @@ console.log(allCategorys)
                 {
                     allCategorys?.length === 0 ? <SmallLoading></SmallLoading> : <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-7'>
                         {
-                            allCategorys?.map(allCategory => <CategoryDetails key={allCategory._id} allCategory={allCategory} setOrderBike={setOrderBike}></CategoryDetails>)
+                            allCategorys?.map(allCategory => { return !allCategory.paid && <CategoryDetails key={allCategory._id} allCategory={allCategory} setOrderBike={setOrderBike}></CategoryDetails>})
                         }
                     </div>
                 }

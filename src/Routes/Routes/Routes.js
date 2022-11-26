@@ -40,7 +40,7 @@ const router = createBrowserRouter([
             {path:'/dashboard/payment/:id', 
             loader:({params})=>fetch(`http://localhost:5000/mybookedProducts/${params.id}`),
             element:<PrivetRoute><PaymentPage></PaymentPage></PrivetRoute>},
-            {path:'/dashboard/addProduct', element:<AddProduct></AddProduct>},
+            {path:'/dashboard/addProduct', element:<PrivetRoute><AddProduct></AddProduct></PrivetRoute>},
             {path:'/dashboard/allSellar', element:<AdminRoutes><AllSellar></AllSellar></AdminRoutes>},
             {path:'/dashboard/allUsers', element:<AdminRoutes><AllUsers></AllUsers></AdminRoutes>},
             {path:'/dashboard/wishlistProduct', element:<PrivetRoute><WishlistProduct></WishlistProduct></PrivetRoute>},

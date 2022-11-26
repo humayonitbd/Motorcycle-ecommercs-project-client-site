@@ -18,16 +18,36 @@ const AllSellar = () => {
             method: 'DELETE',
 
         })
-        .then(res =>res.json)
+        .then(res =>res.json())
         .then(data =>{
-            console.log(data)
+          if(data.acknowledged){
             toast.success('users deleted successfull!')
             refetch();
-            console.log(data)
+          }
+            
         })
 
     }
 
+
+    //verify seller handler
+    const handlerVerifyBtn=(id)=>{
+      fetch(`http://localhost:5000/seller/verify/${id}`, {
+        method: 'PUT',
+        headers:{
+          'content-type': 'application/json'
+        }
+
+      })
+      .then(res =>res.json())
+      .then(data =>{
+        if(data.acknowledged){
+          toast.success('Seller verified successfull!!')
+        }
+        
+      })
+
+    }
     return (
         <div>
         <div className="overflow-x-auto w-full">
@@ -42,7 +62,6 @@ const AllSellar = () => {
     </th>
     <th>Name</th>
     <th>Email</th>
-    <th>Role</th>
     <th>Action</th>
   </tr>
 </thead>
@@ -67,9 +86,11 @@ const AllSellar = () => {
         <td>
           {allSeller.email}
         </td>
-        <td><strong>{allSeller.role}</strong></td>
         <th>
           <button onClick={()=>handlerDeleteBtn(allSeller._id)} className="btn bg-red-500 mr-2">delete</button>
+          {
+            allSeller.email && allSeller.verify ? <><button className='btn btn-primary'>Verified Seller</button></> : <><button onClick={()=>handlerVerifyBtn(allSeller._id)} className="btn bg-orange-500 mr-2">verify</button></>
+          }
         </th>
       </tr>)
     }
