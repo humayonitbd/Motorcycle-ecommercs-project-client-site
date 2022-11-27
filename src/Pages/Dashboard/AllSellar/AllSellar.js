@@ -43,6 +43,7 @@ const AllSellar = () => {
       .then(data =>{
         if(data.acknowledged){
           toast.success('Seller verified successfull!!')
+          refetch();
         }
         
       })

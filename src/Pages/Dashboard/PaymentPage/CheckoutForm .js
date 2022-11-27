@@ -81,7 +81,7 @@ const CheckoutForm  = ({paymentProduct}) => {
                 transactionId: paymentIntent.id,
                 email,
                 orderId: _id,
-                productId
+                // productId
 
             }
         

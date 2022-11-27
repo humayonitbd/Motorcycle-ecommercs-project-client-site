@@ -2,39 +2,30 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../Context/AuthProvider';
 import CategoryModal from '../CategoryModal/CategoryModal';
+import { FaCheck } from 'react-icons/fa';
 
-const CategoryDetails = ({allCategory, setOrderBike}) => {
+const CategoryDetails = ({allCategory,refetch, setOrderBike}) => {
     const {user} = useContext(AuthContext);
-    const {origin_price, img, name, location, sellerName, resale_price, use, category,_id} = allCategory;
+    const {origin_price, img, name, location,report, verify, sellerName, resale_price, use, category,_id} = allCategory;
    
-    const handlerWishlistBtn=()=>{
-            const wishListProducts = {
-                origin_price,
-                img,
-                name,
-                location,
-                sellerName,
-                resale_price,
-                use,
-                category,
-                wishlishMan: user?.displayName,
-                wishlishEmail: user?.email
-            }
-            fetch('http://localhost:5000/wishListProducts',{
-            method:'POST',
+    const handlerReportBtn=(id)=>{
+        // console.log(id)
+            fetch(`http://localhost:5000/reportProducts/${id}`,{
+            method:'put',
             headers:{
                 'content-type':'application/json'
             },
-            body:JSON.stringify(wishListProducts)
+            
             })
             .then(res=>res.json())
             .then(data =>{
                 if(data.acknowledged){
                     toast.success('wishListed sucessfull!!!');
-                    
+                    refetch();
                 }
             
         })
+
            
 
     }
@@ -48,9 +39,12 @@ const CategoryDetails = ({allCategory, setOrderBike}) => {
                 <p>Origin-price: <strong>$<s> {origin_price}</s></strong> </p>
                 <p>Resale-price: <strong>${resale_price}</strong></p>
                 {/* <p>Use: {use ? user : ''}</p> */}
-                <p>SellerName: {sellerName}</p>
+                {/* <p>SellerName: {verify ? <>{sellerName} <FaCheck className='text-green-500'/></> : sellerName}</p> */}
+                {verify ? <><p>SellerName: {sellerName} <FaCheck className='text-green-500 inline'/></p></> : <><p>SellerName:  {sellerName}</p></>}
                 <div className="card-actions mt-2 justify-between">
-                    <button onClick={handlerWishlistBtn} className='btn btn-primary'>wishlist </button>
+                   {
+                    report ? <><button className='btn bg-red-600'>reported</button></> : <> <button onClick={()=>handlerReportBtn(_id)} className='btn btn-primary'>report </button></>
+                   }
                 <label onClick={()=>setOrderBike(allCategory)} htmlFor="CategoryModal" className="btn bg-orange-500  border-none">Book now</label>
                 </div>
             </div>

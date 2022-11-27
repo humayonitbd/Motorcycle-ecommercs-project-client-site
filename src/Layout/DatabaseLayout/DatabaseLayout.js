@@ -23,8 +23,8 @@ const DatabaseLayout = () => {
                 <ul className="menu p-4 w-80 bg-base-100 text-base-content">
                     {
                         isAdmin === 'admin' ? <><li><Link to='/dashboard/allUsers'>All Users</Link></li>
-                        <li><Link to='/dashboard/allSellar'>All Sellar</Link></li></> : isAdmin === 'seller' ? <><li><Link to='/dashboard/addProduct'>Add-Product</Link></li>
-                <li><Link to='/dashboard/myProduct'>My-Product</Link></li></> :  <><li><Link to="/dashboard/myorders" >My-Orders</Link></li><li><Link to='/dashboard/wishlistProduct'>Wishlish Products</Link></li></>
+                        <li><Link to='/dashboard/allSellar'>All Sellar</Link></li><li><Link to='/dashboard/roportProduct'>Report Products</Link></li></> : isAdmin === 'seller' ? <><li><Link to='/dashboard/addProduct'>Add-Product</Link></li>
+                <li><Link to='/dashboard/myProduct'>My-Product</Link></li></> :  <><li><Link to="/dashboard/myorders" >My-Orders</Link></li></>
                     }
                
                 

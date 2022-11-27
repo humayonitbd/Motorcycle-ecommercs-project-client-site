@@ -17,6 +17,7 @@ import Register from "../../Pages/Login/Register/Register";
 import ErrorPage from "../../SharedPage/ErrorPage/ErrorPage";
 import AdminRoutes from "../AdminRoutes/AdminRoutes";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
+import SellerRoutes from "../SellerRoutes/SellerRoutes";
 
 const router = createBrowserRouter([
     {path:'/',
@@ -40,11 +41,11 @@ const router = createBrowserRouter([
             {path:'/dashboard/payment/:id', 
             loader:({params})=>fetch(`http://localhost:5000/mybookedProducts/${params.id}`),
             element:<PrivetRoute><PaymentPage></PaymentPage></PrivetRoute>},
-            {path:'/dashboard/addProduct', element:<PrivetRoute><AddProduct></AddProduct></PrivetRoute>},
+            {path:'/dashboard/addProduct', element:<SellerRoutes><AddProduct></AddProduct></SellerRoutes>},
             {path:'/dashboard/allSellar', element:<AdminRoutes><AllSellar></AllSellar></AdminRoutes>},
             {path:'/dashboard/allUsers', element:<AdminRoutes><AllUsers></AllUsers></AdminRoutes>},
-            {path:'/dashboard/wishlistProduct', element:<PrivetRoute><WishlistProduct></WishlistProduct></PrivetRoute>},
-            {path:'/dashboard/myProduct', element:<PrivetRoute><MyProducts></MyProducts></PrivetRoute>}
+            {path:'/dashboard/roportProduct', element:<PrivetRoute><WishlistProduct></WishlistProduct></PrivetRoute>},
+            {path:'/dashboard/myProduct', element:<SellerRoutes><MyProducts></MyProducts></SellerRoutes>}
         ]
     }
 ])

@@ -9,7 +9,7 @@ const Categoris = () => {
     const category = useLoaderData();
     const [orderBike, setOrderBike] = useState(null);
 
-    const {data:allCategorys = []} = useQuery({ 
+    const {data:allCategorys = [], refetch} = useQuery({ 
         queryKey:['allCategorys'],
         queryFn:()=>fetch(`http://localhost:5000/allCategory/?category=${category.category}`)
         .then(res =>res.json())
@@ -22,7 +22,7 @@ console.log(allCategorys)
                 {
                     allCategorys?.length === 0 ? <SmallLoading></SmallLoading> : <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-7'>
                         {
-                            allCategorys?.map(allCategory => { return !allCategory.paid && <CategoryDetails key={allCategory._id} allCategory={allCategory} setOrderBike={setOrderBike}></CategoryDetails>})
+                            allCategorys?.map(allCategory => { return !allCategory.paid && <CategoryDetails key={allCategory._id} allCategory={allCategory} refetch={refetch} setOrderBike={setOrderBike}></CategoryDetails>})
                         }
                     </div>
                 }
