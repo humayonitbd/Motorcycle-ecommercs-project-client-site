@@ -40,7 +40,7 @@ const MyProducts = () => {
                     {
                         allMyProducts.length === 0 ? <SmallLoading></SmallLoading> : <>
                         {
-                      allMyProducts.length && allMyProducts?.map(allMyProduct => <MyProductDetails key={allMyProduct._id} allMyProduct={allMyProduct} handlerDeleteBtn={handlerDeleteBtn}></MyProductDetails> )
+                      allMyProducts.length && allMyProducts?.map(allMyProduct => <MyProductDetails key={allMyProduct._id} allMyProduct={allMyProduct} handlerDeleteBtn={handlerDeleteBtn} refetch={refetch}></MyProductDetails> )
                         }
                         </>
                     }

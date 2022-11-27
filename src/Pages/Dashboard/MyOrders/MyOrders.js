@@ -56,7 +56,7 @@ const MyOrders = () => {
     </thead>
     <tbody>
       {
-        mybookedProducts?.length === 0 ? <SmallLoading></SmallLoading> : <>
+        mybookedProducts?.length === 0 ? <><div className='text-center text-orange-500 text-3xl'><h3>Please some orders</h3></div></> : <>
         {
          mybookedProducts.length && mybookedProducts?.map((mybookedProduct, idx)=><tr>
             <th>

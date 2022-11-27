@@ -8,6 +8,7 @@ const DatabaseLayout = () => {
     const {user} = useContext(AuthContext);
     console.log(user)
     const [isAdmin] = useAdmin(user?.email)
+    console.log(isAdmin)
     return (
         <div>
              <Header></Header>

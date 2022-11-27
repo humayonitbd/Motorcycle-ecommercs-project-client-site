@@ -117,13 +117,14 @@ const AddProduct = () => {
                 <label className="label">
                   <span className="label-text">Product Category</span>
                 </label>
-                <input
-                  type="text"
-                  name="productCategory"
-                  placeholder="product Category"
-                  className="input input-bordered"
-                  required
-                />
+                <select required name="productCategory" className="select select-bordered w-full">
+                <option defaultValue='honda'>honda</option>
+                <option defaultValue='suzuki'>suzuki</option>
+                <option defaultValue='hero'>hero</option>
+                <option defaultValue='yamaha'>yamaha</option>
+               
+              </select>
+                
               </div>
               <div className="form-control">
                 <label className="label">

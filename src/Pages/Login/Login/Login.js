@@ -45,12 +45,20 @@ const Login = () => {
           email: user.email,
           role: 'user'
         }
-        SaveUserInfo(userData)
+        fetch(`http://localhost:5000/googleUsers`,{
+          method: 'PUT',
+          headers:{
+              'content-type': 'application/json'
+          },
+          body:JSON.stringify(userData)
+        })
         .then(res =>res.json())
         .then(data =>{
           console.log(data)
-          // setCreateEmail(userData.email)
+          setLoginEmail(userData.email)
         })
+        
+        
         console.log(user)
       })
       .catch(error =>console.log(error))

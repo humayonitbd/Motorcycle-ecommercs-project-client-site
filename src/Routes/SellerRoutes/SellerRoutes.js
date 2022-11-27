@@ -12,7 +12,7 @@ const SellerRoutes = ({children}) => {
         return <Loading></Loading>
     }
 
-    if(user?.email && isSeller){
+    if(user?.email && isSeller === 'seller'){
         return children;
     }
     return <Navigate to='/login' state={{from: location}} replace></Navigate>

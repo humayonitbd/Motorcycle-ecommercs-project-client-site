@@ -49,7 +49,7 @@ const WishlistProduct = () => {
     </thead>
     <tbody>
       {
-        reportProducts?.length === 0 ? <SmallLoading></SmallLoading> : <>
+        reportProducts?.length === 0 ? <><div className='text-2xl text-orange-500'>No reported product!!</div></> : <>
         {
          reportProducts.length && reportProducts?.map(( reportProduct, idx)=><tr>
             <th>

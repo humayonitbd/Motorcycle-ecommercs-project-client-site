@@ -111,11 +111,7 @@ const Register = () => {
                   className="input input-bordered"
                     required
                 />
-                <label className="label">
-                  <Link href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </Link>
-                </label>
+                
               </div>
               <select required name="role" className="select select-bordered w-full">
                 <option defaultValue='user'>

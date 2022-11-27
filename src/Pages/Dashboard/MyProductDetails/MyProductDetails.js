@@ -1,7 +1,7 @@
 import React from 'react';
 import toast from 'react-hot-toast';
 
-const MyProductDetails = ({allMyProduct, handlerDeleteBtn}) => {
+const MyProductDetails = ({allMyProduct,refetch, handlerDeleteBtn}) => {
     const {name,
         origin_price,
         resale_price,
@@ -26,7 +26,7 @@ const MyProductDetails = ({allMyProduct, handlerDeleteBtn}) => {
         .then(data =>{
             if(data.acknowledged){
                 toast.success('Advertice sucessfull!!!');
-                
+                refetch();
               }
             
         })

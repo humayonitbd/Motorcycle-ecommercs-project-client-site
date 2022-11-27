@@ -10,6 +10,7 @@ const HomeBikeCategory = () => {
         .then(res => res.json())
     })
      console.log(categorys)
+     
     return (
         <div className='my-20 md:mb-40'>
             <div className='text-center my-5'>
