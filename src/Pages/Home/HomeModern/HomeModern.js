@@ -11,7 +11,7 @@ const HomeModern = () => {
             </div>
             <div className="hero my-12">
             <div className="hero-content flex-col lg:flex-row">
-                <img src={bike1} className="md:w-1/2 rounded-lg shadow-2xl" alt=''/>
+                <img src={bike1} className="md:w-1/2 rounded-lg" alt=''/>
                 <div className='md:w-1/2 md:pl-3 '>
                 <p className='font-bold text-lg text-orange-500'>New</p>
                 <h1 className="md:text-4xl text-2xl font-bold ">NEW RIDE-ON MOTORCYCLES</h1>
@@ -23,7 +23,7 @@ const HomeModern = () => {
             {/* //second secton  */}
             <div className="hero mb-12">
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <img src={bike2} className="md:w-1/2 rounded-lg shadow-2xl" alt=''/>
+                <img src={bike2} className="md:w-1/2 rounded-lg" alt=''/>
                 <div className='md:w-1/2 md:pr-3'>
                 <p className='font-bold text-lg text-orange-500'>MODERN</p>
                 <h1 className="md:text-4xl text-2xl font-bold">IN A SPECIAL AND MODERN DESIGN</h1>

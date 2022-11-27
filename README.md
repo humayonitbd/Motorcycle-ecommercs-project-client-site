@@ -68,3 +68,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+Our website details
+
+*****Website Name: Motorcycle website 
+*****Website live link: 
+
+*****Website Details: You can see a meaningful header footer and home page on my motorcycle creative website.On this website each product is picked according to different motorcycle category and each product is shown in dynamic round.Every product has a button named book next to it and by clicking on it you can make a booking with the help of mobile.And there is a report button next to the book book button from where you can report the product .
+
+***** the products that you book will go to your database, you can view the products and delete them from there, and on a click of a button you can take the dynamic list.If you are a seller and login to the website here, you can create a product and then view your ad and submit your ad in the ad section by clicking a button.After you join as seller, admin can verify you if you want and if you verify, it will show you the products as a tick mark next to your product.
+
+*****The admin of this web site can see the user successfully and if no one can see the seller, I can verify the seller,My website is created by tailwend css and has firebase authentication and express.js database connect.
+My website is designed in a modern way with all the functionalities very nicely arranged and created from a creative mindset

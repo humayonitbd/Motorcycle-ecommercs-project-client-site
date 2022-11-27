@@ -36,7 +36,7 @@ const MyProducts = () => {
     return (
         <div>
             <h3 className='text-center text-3xl font-bold text-orange-500 my-5'>My Products</h3>
-            <div className='grid grid-cols-1 mx-3 md:grid-cols-2 gap-5 my-10'>
+            <div className=' my-10'>
                     {
                         allMyProducts.length === 0 ? <SmallLoading></SmallLoading> : <>
                         {

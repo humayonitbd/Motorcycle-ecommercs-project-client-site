@@ -42,7 +42,7 @@ const Header = () => {
             </div>
             <div className="navbar-start">
                 <img src={logo} className="w-20 h-16 " alt="" />
-                <Link className="font-bold text-xl text-orange-500">Motorcycle</Link>
+                <Link className="font-bold text-xl text-orange-500">Motorcycle </Link>
                 <div className="navbar-center ml-5 hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                 {menuber}

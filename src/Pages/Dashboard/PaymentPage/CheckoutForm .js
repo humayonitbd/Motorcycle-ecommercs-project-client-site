@@ -81,10 +81,11 @@ const CheckoutForm  = ({paymentProduct}) => {
                 transactionId: paymentIntent.id,
                 email,
                 orderId: _id,
-                // productId
+                productId,
+                productName
 
             }
-        
+        console.log(payment)
             fetch('http://localhost:5000/payments',{
                 method: 'POST',
                 headers:{

@@ -14,6 +14,7 @@ const MyProductDetails = ({allMyProduct,refetch, handlerDeleteBtn}) => {
         img,
         category,
         advertice,
+        paid,
         _id} = allMyProduct;
     const handlerAdvertiseBtn = (id)=>{
         fetch(`http://localhost:5000/addverticeProducts/${id}`,{
@@ -34,26 +35,26 @@ const MyProductDetails = ({allMyProduct,refetch, handlerDeleteBtn}) => {
 
     }
     return (
-        <div>
-            <div className="card bg-base-200 shadow-xl p-4">
-            <figure><img className='w-full h-40' src={img} alt="Shoes" /></figure>
-            <div className="card-body">
-                <h2 className="card-title font-bold">{name}</h2>
-                <p className='font-semibold'>Category: {category}</p>
-                <p className='font-semibold'>Original Price: <s>${ origin_price}</s></p>
-                <p className='font-semibold'>Relese Price: ${resale_price}</p>
-                <p className='font-semibold'>location: {location}</p>
-                <p className='font-semibold'>Mobile: {mobileNumber}</p>
-                <p className='font-semibold'>Date: {cellDate}</p>
-                <p>{productDetails ? productDetails.slice(0, 100): productDetails}...</p>
-                <div className="card-actions mt-3 justify-between">
-                <button onClick={()=>handlerDeleteBtn(_id)} className="btn btn-primary">Delete</button>
-                {
+        <div> 
+            <div className="card card-side bg-base-100 mb-5 shadow-xl">
+            <div className="avatar">
+            <div className="w-24 rounded-full mr-3">
+                <img src={img}  alt=''/>
+            </div>
+            </div>
+            <div className="md:flex justify-between items-center">
+                <h2 className="card-title ">{name}</h2>
+                <p className='md:mx-3'><s>{origin_price}</s>/ {resale_price}</p>
+                <p>{paid ? <><span className='btn bg-green-500'>Sold Product</span></> : <><span>Available product</span></>}</p>
+                <p className='md:mx-5'>{
                     advertice ? <button className='btn btn-primary'>adverticed true</button> : <><button onClick={()=>handlerAdvertiseBtn(_id)} className="btn btn-primary">advertise</button></>
-                }
+                }</p>
+                <div className="card-actions mt-3 md:mt-0">
+                <button onClick={()=>handlerDeleteBtn(_id)} className="btn btn-primary">Delete</button>
                 </div>
             </div>
-            </div>
+            </div>            
+           
         </div>
     );
 };

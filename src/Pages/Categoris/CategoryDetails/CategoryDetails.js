@@ -39,7 +39,7 @@ const CategoryDetails = ({allCategory,refetch, setOrderBike}) => {
                 <p>Origin-price: <strong>$<s> {origin_price}</s></strong> </p>
                 <p>Resale-price: <strong>${resale_price}</strong></p>
                 {/* <p>Use: {use ? user : ''}</p> */}
-                {/* <p>SellerName: {verify ? <>{sellerName} <FaCheck className='text-green-500'/></> : sellerName}</p> */}
+               {use ? <><p>Use: {use}</p></>: ''}
                 {verify ? <><p>SellerName: {sellerName} <FaCheck className='text-green-500 inline'/></p></> : <><p>SellerName:  {sellerName}</p></>}
                 <div className="card-actions mt-2 justify-between">
                    {
