@@ -74,7 +74,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 Our website details
 
 *****Website Name: Motorcycle website 
-*****Website live link: 
+*****Website live link: https://bike-resale-market.web.app/
 
 *****Website Details: You can see a meaningful header footer and home page on my motorcycle creative website.On this website each product is picked according to different motorcycle category and each product is shown in dynamic round.Every product has a button named book next to it and by clicking on it you can make a booking with the help of mobile.And there is a report button next to the book book button from where you can report the product .
 
@@ -82,3 +82,10 @@ Our website details
 
 *****The admin of this web site can see the user successfully and if no one can see the seller, I can verify the seller,My website is created by tailwend css and has firebase authentication and express.js database connect.
 My website is designed in a modern way with all the functionalities very nicely arranged and created from a creative mindset
+
+
+
+
+*****admin role email and passwor 
+*****email: mdhumayonforid93@gmail.com
+*****password: asdfgh

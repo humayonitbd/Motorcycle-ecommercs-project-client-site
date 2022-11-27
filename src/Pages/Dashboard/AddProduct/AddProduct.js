@@ -1,81 +1,80 @@
-import React, { useContext } from 'react';
-import toast from 'react-hot-toast';
-import {  useNavigate } from "react-router-dom";
-import { AuthContext } from '../../../Context/AuthProvider';
+import React, { useContext } from "react";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../Context/AuthProvider";
 
 const AddProduct = () => {
-    const {user} = useContext(AuthContext);
-    const navigete = useNavigate();
-    const handlerAddProduct=(e)=>{
-        e.preventDefault();
-        const form = e.target;
-        const name = form.productName.value;
-        const origin_price = form.originePrice.value;
-        const resale_price = form.relesePrice.value;
-        const location = form.location.value;
-        const mobileNumber = form.mobileNumber.value;
-        const cellDate = form.cellDate.value;
-        const category = form.productCategory.value;
-        const image = form.producturl.files[0];
-        const productDetails = form.productDetails.value;
-        const formdata = new FormData();
-        formdata.append('image', image)
+  const { user } = useContext(AuthContext);
+  const navigete = useNavigate();
+  const handlerAddProduct = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.productName.value;
+    const origin_price = form.originePrice.value;
+    const resale_price = form.relesePrice.value;
+    const location = form.location.value;
+    const mobileNumber = form.mobileNumber.value;
+    const cellDate = form.cellDate.value;
+    const category = form.productCategory.value;
+    const image = form.producturl.files[0];
+    const productDetails = form.productDetails.value;
+    const formdata = new FormData();
+    formdata.append("image", image);
 
-        fetch(`https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_IMAGE_API}`,{
-            method: 'POST',
-            body: formdata
+    fetch(
+      `https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_IMAGE_API}`,
+      {
+        method: "POST",
+        body: formdata,
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        const img = data.data.display_url;
+        const addProducts = {
+          name,
+          origin_price,
+          resale_price,
+          location,
+          mobileNumber,
+          cellDate,
+          productDetails,
+          sellerEmail: user.email,
+          sellerName: user.displayName,
+          img,
+          category,
+          status: "Available",
+        };
 
-        })
-        .then(res=>res.json())
-        .then(data =>{
-          const img = data.data.display_url;
-          const addProducts = {
-            name,
-            origin_price,
-            resale_price,
-            location,
-            mobileNumber,
-            cellDate,
-            productDetails,
-            sellerEmail: user.email,
-            sellerName: user.displayName,
-            img,
-            category,
-            status: 'Available'
-
-        }
-
-        console.log(addProducts)
-        fetch(`http://localhost:5000/addProducts`,{
-          method:'POST',
-          headers:{
-            'content-type':'application/json'
+        console.log(addProducts);
+        fetch(`https://resale-market-server-taupe.vercel.app/addProducts`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
           },
-          body: JSON.stringify(addProducts)
+          body: JSON.stringify(addProducts),
         })
-        .then(res =>res.json())
-        .then(data =>{
-          if(data.acknowledged){
-            toast.success('Added your product!!');
-            form.reset();
-            navigete('/dashboard/myProduct')
-          }
-         
-        })
-        
-        })
-        
-        
-        
-    }
-    return (
-        <div>
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.acknowledged) {
+              toast.success("Added your product!!");
+              form.reset();
+              navigete("/dashboard/myProduct");
+            }
+          });
+      });
+  };
+  return (
+    <div>
       <div className="hero min-h-screen ">
         <div className="hero-content flex-col ">
           <div className="text-center ">
             <h1 className="text-5xl font-bold">Add Product now!</h1>
           </div>
-          <form onSubmit={handlerAddProduct} className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
+          <form
+            onSubmit={handlerAddProduct}
+            className="card flex-shrink-0 w-full shadow-2xl bg-base-100"
+          >
             <div className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -117,14 +116,16 @@ const AddProduct = () => {
                 <label className="label">
                   <span className="label-text">Product Category</span>
                 </label>
-                <select required name="productCategory" className="select select-bordered w-full">
-                <option defaultValue='honda'>honda</option>
-                <option defaultValue='suzuki'>suzuki</option>
-                <option defaultValue='hero'>hero</option>
-                <option defaultValue='yamaha'>yamaha</option>
-               
-              </select>
-                
+                <select
+                  required
+                  name="productCategory"
+                  className="select select-bordered w-full"
+                >
+                  <option defaultValue="honda">honda</option>
+                  <option defaultValue="suzuki">suzuki</option>
+                  <option defaultValue="hero">hero</option>
+                  <option defaultValue="yamaha">yamaha</option>
+                </select>
               </div>
               <div className="form-control">
                 <label className="label">
@@ -147,9 +148,8 @@ const AddProduct = () => {
                   name="location"
                   placeholder="Location"
                   className="input input-bordered"
-                    required
+                  required
                 />
-                
               </div>
               <div className="form-control">
                 <label className="label">
@@ -160,9 +160,8 @@ const AddProduct = () => {
                   name="mobileNumber"
                   placeholder="mobile Number"
                   className="input input-bordered"
-                    required
+                  required
                 />
-                
               </div>
               <div className="form-control">
                 <label className="label">
@@ -173,12 +172,15 @@ const AddProduct = () => {
                   name="cellDate"
                   placeholder="cell date"
                   className="input input-bordered"
-                    required
+                  required
                 />
-                
               </div>
-              <textarea name='productDetails' className="textarea h-40 w-full textarea-bordered" placeholder="Product details righting ......"></textarea>
-              
+              <textarea
+                name="productDetails"
+                className="textarea h-40 w-full textarea-bordered"
+                placeholder="Product details righting ......"
+              ></textarea>
+
               <div className="form-control mt-6">
                 <input
                   type="submit"
@@ -191,7 +193,7 @@ const AddProduct = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default AddProduct;
