@@ -87,5 +87,5 @@ My website is designed in a modern way with all the functionalities very nicely 
 
 
 *****admin role email and passwor 
-*****email: mdhumayonforid93@gmail.com
-*****password: asdfgh
+*****adminEmail: mdhumayonforid93@gmail.com
+*****AdminPassword: asdfgh
