@@ -34,7 +34,7 @@ const CategoryDetails = ({ allCategory, refetch, setOrderBike }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          toast.success("wishListed sucessfull!!!");
+          toast.success("Reported sucessfull!!!");
           refetch();
         }
       });
