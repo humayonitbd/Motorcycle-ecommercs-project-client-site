@@ -33,8 +33,8 @@ const Header = () => {
                 <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 ">
                     {menuber} 
                
-                    {user?.email ? <><li><Link to='/dashboard'>Dashboard</Link><button className='btn bg-orange-500 ml-3'><Link onClick={logOutHandler} >Log-out</Link></button></li></> : <><button className='btn bg-orange-500 mr-2'> <Link to='/login'>Login</Link></button>
-           <button className='btn mr-2 bg-orange-500'> <Link to='/register'>Register</Link></button></>
+                    {user?.email ? <><li><Link to='/dashboard'>Dashboard</Link><button className='btn border-none bg-orange-500 ml-3'><Link onClick={logOutHandler} >Log-out</Link></button></li></> : <><button className='btn bg-orange-500 border-none mr-2'> <Link to='/login'>Login</Link></button>
+           <button className='btn mr-2 border-none bg-orange-500'> <Link to='/register'>Register</Link></button></>
        
           }
                 </ul>
