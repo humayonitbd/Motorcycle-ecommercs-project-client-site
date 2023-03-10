@@ -20,9 +20,9 @@ const HomeBikeCategory = () => {
  },[])
   
   return (
-    <div className="my-20 md:mb-40">
+    <div className="pt-20 pb-5 bg-white">
       <div className="text-center my-5">
-        <h2 className="text-5xl font-bold"> Bike Brand Category</h2>
+        <h2 className="text-5xl text-black font-bold"> Bike Brand Category</h2>
       </div>
       {categorys?.length === 0 ? (
         <SmallLoading></SmallLoading>

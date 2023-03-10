@@ -64,16 +64,16 @@ const Login = () => {
   };
   return (
     <div>
-      <div className="hero min-h-screen ">
+      <div className="hero bg-white min-h-screen ">
         <div className="hero-content flex-col ">
           <div className="text-center ">
-            <h1 className="text-5xl font-bold">Login now!</h1>
+            <h1 className="text-5xl font-bold text-black">Login now!</h1>
           </div>
           <form
             onSubmit={handlerLogin}
             className="card flex-shrink-0 w-full shadow-2xl bg-base-100"
           >
-            <div className="card-body">
+            <div className="card-body bg-white">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -82,7 +82,7 @@ const Login = () => {
                   type="email"
                   name="email"
                   placeholder="email"
-                  className="input input-bordered"
+                  className="input input-bordered bg-white"
                   required
                 />
               </div>
@@ -94,7 +94,7 @@ const Login = () => {
                   type="password"
                   name="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input input-bordered bg-white"
                   required
                 />
                 <label className="label">

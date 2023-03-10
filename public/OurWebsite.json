@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        
+        "name": "Suzuki Motorcycle",
+        "thumbnail": "https://suzukicycles.com/-/media/project/cycles/images/products/motorcycles/gsx-r600/2021/gallery/gsx-r600m1_yuh_d_web.png",
+        "link": "/category/637f412d291a873c0831f598"
+        
+    },
+    {
+        "id": 2,
+        "name": "Hiro Motorcycle",
+        "thumbnail": "https://static.autox.com/uploads/bikes/2017/05/1486030508-hero-hf-deluxe.jpg",
+        "link": "/category/637f412d291a873c0831f599"
+    },
+    {
+        "id": 3,
+        "name": "Honda Motorcycle",
+        "thumbnail": "https://imgd.aeplcdn.com/370x208/n/cw/ec/43482/sp-125-right-front-three-quarter-2.jpeg?isig=0&q=75",
+        "link": "/category/637f412d291a873c0831f597"
+    },
+    {
+        "id": 4,
+        "name": "Yamaha Motorcycle",
+        "thumbnail": "https://www.webbikeworld.com/wp-content/uploads/2021/01/2021-YZF-R1M.jpg",
+        "link": "/category/637f412d291a873c0831f596"
+        
+    },
+    {
+        "id": 5,
+        "name": "Bajaj Motorcycle",
+        "thumbnail": "https://www.banglamotor.net/images/bajaj/bajaj-pulsar-150-new1.jpg",
+        "link": "/category/637f412d291a873c0831f597"
+    },
+    {
+        "id": 6,
+        "name": "Apache Motorcycle",
+        "thumbnail": "https://static.autox.com/uploads/bikes/2017/05/1486028209-tvs-apachertr160.jpg",
+        "link": "/category/637f412d291a873c0831f596"
+        
+    }
+]

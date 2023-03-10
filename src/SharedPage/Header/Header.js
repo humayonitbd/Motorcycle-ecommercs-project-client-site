@@ -17,13 +17,14 @@ const Header = () => {
     }
     const menuber=<>
     <li><Link to='/'>Home</Link></li>
-    <li><Link to='/blog'>Blog</Link></li>
+    <li><Link to='/about'>About</Link></li>
+    <li><Link to='/service'>Service</Link></li>
     
     
     
     </>
     return (
-        <div className=' py-2'>
+        <div className='bg-white shadow-lg py-0'>
         <div className="navbar w-10/12 mx-auto">
             <div className="navbar-start lg:hidden">
                 <div className="dropdown ">
@@ -33,7 +34,7 @@ const Header = () => {
                 <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 ">
                     {menuber} 
                
-                    {user?.email ? <><li><Link to='/dashboard'>Dashboard</Link><button className='btn border-none bg-orange-500 ml-3'><Link onClick={logOutHandler} >Log-out</Link></button></li></> : <><button className='btn bg-orange-500 border-none mr-2'> <Link to='/login'>Login</Link></button>
+                    {user?.email ? <><li><Link to='/dashboard'>Dashboard</Link><li className=' ml-3'><Link onClick={logOutHandler} >Log-out</Link></li></li></> : <><button className='btn bg-orange-500 border-none mr-2'> <Link to='/login'>Login</Link></button>
            <button className='btn mr-2 border-none bg-orange-500'> <Link to='/register'>Register</Link></button></>
        
           }
@@ -52,8 +53,8 @@ const Header = () => {
             <div className="navbar-end">
           <div className='hidden lg:block'>
           {user?.email ? <><Link to='/dashboard'>Dashboard</Link>
-            <button className='btn ml-3 bg-orange-500'> <Link onClick={logOutHandler} >Log-out</Link></button></> : <><button className='btn mr-2 bg-orange-500'> <Link to='/login'>Login</Link></button>
-           <button className='btn mr-2 bg-orange-500'> <Link to='/register'>Register</Link></button></>}
+            <span className=' ml-3 text-orange-500 border-none'> <Link onClick={logOutHandler} >Logout</Link></span></> : <><button className='btn mr-2 border-none bg-orange-500'> <Link to='/login'>Login</Link></button>
+           <button className='btn border-none mr-2 bg-orange-500'> <Link to='/register'>Register</Link></button></>}
             
         
           

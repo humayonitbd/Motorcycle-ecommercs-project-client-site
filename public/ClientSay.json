@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "img":"https://www.radiustheme.com/demo/html/academics/academics/img/team/4.jpg",
+        "name":"Daziy Millar",
+        "profession":"CEO Founder",
+        "details": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem delectus accusantium saepe at culpa. Iusto veniam repudiandae neque, ipsum expedita nisi maiores totam modi vel sed ducimus nam praesentium? Consequuntur?"
+         
+    },
+    {
+        "id": 2,
+        "img":"https://www.radiustheme.com/demo/html/academics/academics/img/team/2.jpg",
+        "name":"Kazi Fahim",
+        "profession":"Senior web developer",
+        "details": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem delectus accusantium saepe at culpa. Iusto veniam repudiandae neque, ipsum expedita nisi maiores totam modi vel sed ducimus nam praesentium? Consequuntur?"
+         
+    },
+    {
+        "id": 3,
+        "img":"https://www.radiustheme.com/demo/html/academics/academics/img/team/1.jpg",
+        "name":"Mike Hussy",
+        "profession":"Junior web developer",
+        "details": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem delectus accusantium saepe at culpa. Iusto veniam repudiandae neque, ipsum expedita nisi maiores totam modi vel sed ducimus nam praesentium? Consequuntur?"
+         
+    },
+    {
+        "id": 4,
+        "img":"https://www.radiustheme.com/demo/html/academics/academics/img/team/4.jpg",
+        "name":"Mike Hussy",
+        "profession":"HR Founder",
+        "details": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem delectus accusantium saepe at culpa. Iusto veniam repudiandae neque, ipsum expedita nisi maiores totam modi vel sed ducimus nam praesentium? Consequuntur?"
+         
+    },
+    {
+        "id": 5,
+        "img":"https://www.radiustheme.com/demo/html/academics/academics/img/team/3.jpg",
+        "name":"Daziy millar",
+        "profession":"junior Web developer",
+        "details": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem delectus accusantium saepe at culpa. Iusto veniam repudiandae neque, ipsum expedita nisi maiores totam modi vel sed ducimus nam praesentium? Consequuntur?"
+         
+    }
+]

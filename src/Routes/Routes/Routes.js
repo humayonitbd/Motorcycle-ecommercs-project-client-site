@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import DatabaseLayout from "../../Layout/DatabaseLayout/DatabaseLayout";
 import Main from "../../Layout/Main/Main";
-import BlogPage from "../../Pages/BlogPage/BlogPage";
+import About from "../../Pages/BlogPage/About";
 import Categoris from "../../Pages/Categoris/Categoris";
 import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
 import AllSellar from "../../Pages/Dashboard/AllSellar/AllSellar";
@@ -14,6 +14,7 @@ import WishlistProduct from "../../Pages/Dashboard/WishlistProduct/WishlistProdu
 import HomeMain from "../../Pages/Home/HomeMain/HomeMain";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
+import Service from "../../Pages/Service/Service";
 import ErrorPage from "../../SharedPage/ErrorPage/ErrorPage";
 import AdminRoutes from "../AdminRoutes/AdminRoutes";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
@@ -26,7 +27,8 @@ const router = createBrowserRouter([
     element: <Main></Main>,
     children: [
       { path: "/", element: <HomeMain></HomeMain> },
-      { path: "/blog", element: <BlogPage></BlogPage> },
+      { path: "/about", element: <About></About> },
+      { path: "/service", element: <Service></Service> },
       { path: "/login", element: <Login></Login> },
       { path: "/register", element: <Register></Register> },
       {

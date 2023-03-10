@@ -1,10 +1,12 @@
 import { map } from "@firebase/util";
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useState } from "react";
 import SmallLoading from "../../../SharedPage/Loading/SmallLoading";
+import CategoryModal from "../../Categoris/CategoryModal/CategoryModal";
 import HomeAdverticeDetails from "./HomeAdverticeDetails";
 
 const HomeAdvertice = () => {
+  const [orderBike, setOrderBike] = useState(null);
   const { data: addverticeProducts = [] } = useQuery({
     queryKey: ["addverticeProducts"],
     queryFn: () =>
@@ -14,13 +16,13 @@ const HomeAdvertice = () => {
   });
 
   return (
-    <div className="my-10">
+    <div className="py-10 bg-[#1a2f5d]">
       <div>
-        <h3 className="text-center text-2xl md:text-4xl font-bold my-12 ">
+        <h3 className="text-center text-2xl md:text-4xl font-bold my-12 text-white">
           Advertice Product
         </h3>
       </div>
-      <div className="grid w-10/12 mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
+      <div className="grid  w-10/12 mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
         {addverticeProducts.length === 0 ? (
           <SmallLoading></SmallLoading>
         ) : (
@@ -32,6 +34,7 @@ const HomeAdvertice = () => {
                     <HomeAdverticeDetails
                       key={addverticeProduct._id}
                       addverticeProduct={addverticeProduct}
+                      setOrderBike={setOrderBike}
                     ></HomeAdverticeDetails>
                   )
                 );
@@ -39,6 +42,12 @@ const HomeAdvertice = () => {
           </>
         )}
       </div>
+      {orderBike && (
+        <CategoryModal
+          orderBike={orderBike}
+          setOrderBike={setOrderBike}
+        ></CategoryModal>
+      )}
     </div>
   );
 };

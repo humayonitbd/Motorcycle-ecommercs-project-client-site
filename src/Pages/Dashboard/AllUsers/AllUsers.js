@@ -27,11 +27,11 @@ const AllUsers = () => {
       });
   };
   return (
-    <div>
-      <div className="overflow-x-auto w-full">
+    <div className="bg-white">
+      <div className="overflow-x-auto w-full ">
         <table className="table w-full">
-          <thead>
-            <tr>
+          <thead className="">
+            <tr className="">
               <th>
                 <label>
                   <input type="checkbox" className="checkbox" />

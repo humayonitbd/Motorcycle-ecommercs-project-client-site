@@ -64,15 +64,15 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="bg-white">
       <div className="hero min-h-screen ">
         <div className="hero-content flex-col ">
           <div className="text-center ">
-            <h1 className="text-5xl font-bold">Register now!</h1>
+            <h1 className="text-5xl font-bold text-black">Register now!</h1>
           </div>
           <form
             onSubmit={handlerRegister}
-            className="card flex-shrink-0 w-full shadow-2xl bg-base-100"
+            className="card flex-shrink-0 w-full shadow-2xl bg-white"
           >
             <div className="card-body">
               <div className="form-control">
@@ -83,7 +83,7 @@ const Register = () => {
                   type="text"
                   name="name"
                   placeholder="name"
-                  className="input input-bordered"
+                  className="input input-bordered bg-white"
                   required
                 />
               </div>
@@ -95,7 +95,7 @@ const Register = () => {
                   type="email"
                   name="email"
                   placeholder="email"
-                  className="input input-bordered"
+                  className="input input-bordered bg-white"
                   required
                 />
               </div>
@@ -107,14 +107,14 @@ const Register = () => {
                   type="password"
                   name="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input input-bordered bg-white"
                   required
                 />
               </div>
               <select
                 required
                 name="role"
-                className="select select-bordered w-full"
+                className="select select-bordered w-full bg-white"
               >
                 <option defaultValue="user">user</option>
                 <option defaultValue="seller">seller</option>

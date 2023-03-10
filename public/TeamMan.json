@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "img":"https://www.radiustheme.com/demo/html/academics/academics/img/team/4.jpg",
+        "name":"Daziy Millar",
+        "profession":"CEO Founder"
+         
+    },
+    {
+        "id": 2,
+        "img":"https://www.radiustheme.com/demo/html/academics/academics/img/team/2.jpg",
+        "name":"Kazi Fahim",
+        "profession":"Senior web developer"
+         
+    },
+    {
+        "id": 3,
+        "img":"https://www.radiustheme.com/demo/html/academics/academics/img/team/1.jpg",
+        "name":"Mike Hussy",
+        "profession":"Junior web developer"
+         
+    },
+    {
+        "id": 4,
+        "img":"https://www.radiustheme.com/demo/html/academics/academics/img/team/4.jpg",
+        "name":"Mike Hussy",
+        "profession":"HR Founder"
+         
+    },
+    {
+        "id": 5,
+        "img":"https://www.radiustheme.com/demo/html/academics/academics/img/team/3.jpg",
+        "name":"Daziy millar",
+        "profession":"junior Web developer"
+         
+    }
+]

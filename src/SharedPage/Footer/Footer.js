@@ -4,7 +4,7 @@ import { FaFacebook , FaTwitter, FaInstagram} from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <div className='bg-neutral'>
+        <div className='bg-black'>
             <footer className="footer w-10/12 mx-auto p-10 text-neutral-content">
             <div>
                 <span className="footer-title">Services</span> 

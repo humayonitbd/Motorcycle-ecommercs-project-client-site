@@ -10,22 +10,22 @@ const DatabaseLayout = () => {
     const [isAdmin] = useAdmin(user?.email)
     console.log(isAdmin)
     return (
-        <div>
+        <div className='bg-white'>
              <Header></Header>
-            <div className="drawer w-10/12 mx-auto drawer-mobile">
+            <div className="drawer w-12/12 mx-auto drawer-mobile bg-white ">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
                 {/* <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}
                 <Outlet></Outlet>
             
             </div> 
-            <div className="drawer-side">
+            <div className="drawer-side bg-slate-500 ">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
-                <ul className="menu p-4 w-80 bg-base-100 text-base-content">
+                <ul className="menu p-4 w-80  text-black">
                     {
-                        isAdmin === 'admin' ? <><li><Link to='/dashboard/allUsers'>All Users</Link></li>
-                        <li><Link to='/dashboard/allSellar'>All Sellar</Link></li><li><Link to='/dashboard/roportProduct'>Report Products</Link></li></> : isAdmin === 'seller' ? <><li><Link to='/dashboard/addProduct'>Add-Product</Link></li>
-                <li><Link to='/dashboard/myProduct'>My-Product</Link></li></> :  <><li><Link to="/dashboard/myorders" >My-Orders</Link></li></>
+                        isAdmin === 'admin' ? <><li className='bg-white rounded '><Link to='/dashboard/allUsers'>All Users</Link></li>
+                        <li className='bg-white rounded '><Link to='/dashboard/allSellar'>All Sellar</Link></li><li className='bg-white rounded '><Link to='/dashboard/roportProduct'>Report Products</Link></li></> : isAdmin === 'seller' ? <><li className='bg-white rounded '><Link to='/dashboard/addProduct'>Add-Product</Link></li>
+                <li className='bg-white rounded '><Link to='/dashboard/myProduct'>My-Product</Link></li></> :  <><li className='bg-white rounded '><Link to="/dashboard/myorders" >My-Orders</Link></li></>
                     }
                
                 
